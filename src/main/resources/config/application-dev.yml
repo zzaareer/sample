@@ -27,10 +27,10 @@ zuul: # those values must be configured depending on the application specific ne
       path: /product/**
       url: ${product.root}
     invoice:
-      path: /product/**
+      path: /invoice/**
       url: ${invoice.root}
     notification:
-      path: /product/**
+      path: /notification/**
       url: ${notification.root}
 
 logging:
