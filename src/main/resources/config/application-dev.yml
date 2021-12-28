@@ -13,11 +13,24 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
-zuul:
+product:
+  root: http://localhost:8081
+invoice:
+  root: http://localhost:8082
+notification:
+  root: http://localhost:8083
+
+zuul: # those values must be configured depending on the application specific needs
   routes:
-    product: url=http://localhost:8081
-    invoice: url=http://localhost:8082
-    notification: url=http://localhost:8083
+    product:
+      path: /product/**
+      url: ${product.root}
+    invoice:
+      path: /product/**
+      url: ${invoice.root}
+    notification:
+      path: /product/**
+      url: ${notification.root}
 
 logging:
   level:
